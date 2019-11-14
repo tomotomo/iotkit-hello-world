@@ -1,4 +1,5 @@
-# coding: utf-8
+#! /usr/bin/env python3
+# # coding: utf-8
 
 """
     TouchPhat部分の制御を行う。
@@ -72,9 +73,9 @@ def handle_touch(event):
         if event.name == 'D':
             code = 'Brasilia'
         if event.name == 'Back':
-            code = 'tutaya'
+            code = 'Tsutaya'
         if event.name == 'Enter':
-            code = 'snakegame'
+            code = 'Snakegame'
 
         if code is not None:
             client.publish(

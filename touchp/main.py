@@ -2,13 +2,13 @@
 # coding: utf-8
 
 """
-    touchphat_mqtt_controllerを始動させるサンプル
+    mqtt_controllerを始動させるサンプル
     別途環境変数の指定が必要です。
     
     必要な環境変数は以下のとおりです。
     
     MQTT_TARGET_NAME 表示制御を行うUnicornHatHDで指定した名前
-    MQTT_NAME MQTT上で使用する名前
+    MQTT_NAME (任意） MQTT上で使用する名前
     MQTT_HOST MQTTホスト名
     MQTT_USER MQTTユーザー名
     MQTT_PASSWORD MQTTパスワード
@@ -27,6 +27,7 @@ from logging import Formatter, StreamHandler, INFO
 import sys
 import os
 
+# ロガーのレベル
 logger.setLevel(INFO)
 handler = StreamHandler(stream=sys.stdout)
 handler.setFormatter(
@@ -39,7 +40,7 @@ logger.addHandler(handler)
 
 # ここから始動処理
 
-from touchphat_mqtt_controller import main
+from mqtt_controller import main
 
 if __name__ == '__main__':
     try:
