@@ -13,7 +13,7 @@ import time
 import os
 
 APIKEY = os.environ.get('OPENWEATHER_API_KEY')
-CITY = London
+CITY = 'London'
 
 CYCLE_TIME = 0.5
 

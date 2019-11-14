@@ -17,7 +17,6 @@ import unicornhathd
 import time
 
 # 表示動作を行う関数のインポート
-from .clock import loop as clock_loop
 from .weather import loop as weather_loop
 
 from threading import Thread, Event
@@ -78,10 +77,10 @@ def change(mode):
 def start():
     '''
         スタート用の関数
-        呼び出されるととりあず時計を表示する
+        呼び出されるととりあずワシントンを表示する
     '''
     logger.debug('display initial function start.')
-    change('clock')
+    change('Washington')
 
 def end():
     '''
