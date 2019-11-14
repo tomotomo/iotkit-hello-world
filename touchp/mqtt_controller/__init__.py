@@ -69,7 +69,7 @@ def handle_touch(event):
         if event.name == 'B':
             code = 'London'
         if event.name == 'C':
-            code = 'NewDelhi'
+            code = 'New Delhi'
         if event.name == 'D':
             code = 'Brasilia'
         if event.name == 'Back':

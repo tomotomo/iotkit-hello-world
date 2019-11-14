@@ -18,10 +18,7 @@ import unicornhathd
 import time
 
 # 表示動作を行う関数のインポート
-from .Washington import loop as Washington_loop
-from .London import loop as London_loop
-from .NewDelhi import loop as NewDelhi_loop
-from .Brasilia import loop as Brasilia_loop
+from .weather import loop
 from threading import Thread, Event
 
 # eventオブジェクトを作成する
@@ -37,25 +34,11 @@ def change(mode):
 
     # 渡されたモードの確認。
     # 知らないモードが渡された場合はここで受付を棄却する
-    if mode not in ('Washington', 'NewDelhi','London','Brasilia'):
+    if mode not in ('Washington','New Delhi','London','Brasilia','Setagaya'):
         logger.warn('invalid mode (%s)', mode)
         return False
 
     logger.debug('get change call to "%s"', mode)
-
-    # モードに対応した関数を用意する
-    func = None
-    if mode == 'Washington':
-        func = Washington_loop
-    elif mode == 'NewDelhi':
-        func = NewDelhi_loop
-    elif mode == 'London':
-        func = London_loop
-    elif mode == 'Brasilia':
-        func = Brasilia_loop
-    else:
-        logger.error('cant get function.')
-        return False
 
     # イベントオブジェクトをセットして現在動作している表示処理を終了させる。
     # これがセットされると表示関数中ループを抜け出すことにより関数が終了し、デーモンも消滅する。
@@ -70,7 +53,7 @@ def change(mode):
     #　Threadオブジェクトに動作関数を渡し、並列動作を開始させる（デーモンの作成）
     # ここでeventオブジェクトを渡して終了イベントを渡せるようにする
     # https://docs.python.jp/3/library/threading.html#thread-objects
-    driver = Thread(target=func, args=(event,))
+    driver = Thread(target=loop, args=(event,mode))
     driver.daemon = True
     driver.start()
 
