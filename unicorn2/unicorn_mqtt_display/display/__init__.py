@@ -17,8 +17,10 @@ import unicornhathd
 import time
 
 # 表示動作を行う関数のインポート
-from .weather import loop as weather_loop
-
+from .Washington import loop as Washington_loop
+from .London import loop as London_loop
+from .NewDelhi import loop as NewDelhi_loop
+from .Brasilia import loop as Brasilia_loop
 from threading import Thread, Event
 
 # eventオブジェクトを作成する
@@ -43,13 +45,13 @@ def change(mode):
     # モードに対応した関数を用意する
     func = None
     if mode == 'Washington':
-        func = weather_loop
+        func = Washington_loop
     elif mode == 'NewDelhi':
-        func = weather_loop
+        func = NewDelhi_loop
     elif mode == 'London':
-        func = weather_loop
+        func = London_loop
     elif mode == 'Brasilia':
-        func = weather_loop
+        func = Brasilia_loop
     else:
         logger.error('cant get function.')
         return False
