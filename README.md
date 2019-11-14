@@ -2,6 +2,15 @@
 
 🌏世界の情報を集めて表示するデモ
 
+## To Implement
+
+* [x] Touch pHAT - send message
+* [ ] UnicornHAT 0 - country flag 🇬🇧 
+* [ ] UnicornHAT 1 - time and temperature 🌡 
+* [x] UnicornHAT 2 - weather icon ⛅️ 
+* [ ] Enviro pHAT - send environment data
+* [ ] VoiceKit - speak country information
+
 ## Demo
 
 ### touchp
