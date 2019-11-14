@@ -12,8 +12,8 @@ import requests
 import time
 import os
 
-APIKEY = os.environ.get('OPENWEATHER_API_KEY')
-CITY = Washington
+APIKEY = 'ed257be33b1cc25c39837b9a30336171'
+CITY = 'Washington, US'
 
 CYCLE_TIME = 0.5
 

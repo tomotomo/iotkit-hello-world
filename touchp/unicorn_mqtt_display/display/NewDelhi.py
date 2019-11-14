@@ -12,8 +12,8 @@ import requests
 import time
 import os
 
-APIKEY = 'ed257be33b1cc25c39837b9a30336171'
-CITY = 'Lagarto, BR'
+APIKEY = os.environ.get('OPENWEATHER_API_KEY')
+CITY = NewDelhi
 
 CYCLE_TIME = 0.5
 
@@ -123,11 +123,11 @@ def main(event):
 def loop(event):
     unicornhathd.rotation(90)
 
-    logger.debug('Brasilia loop stert.')
+    logger.debug('NewDelhi loop stert.')
     while not event.is_set():
         main(event)
 
-    logger.debug('Brasilia loop end.')
+    logger.debug('NewDelhi loop end.')
 
 
 if __name__ == '__main__':
