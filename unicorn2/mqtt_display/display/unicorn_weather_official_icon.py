@@ -16,7 +16,9 @@ import time
 
 APIBASE = 'https://api.openweathermap.org/data/2.5/forecast'
 ICON_PATH = 'http://openweathermap.org/img/w'
-APIKEY = 'ed257be33b1cc25c39837b9a30336171'
+# このファイル単体で起動するためのオプション（任意）
+APIKEY = os.environ.get('OPENWEATHER_API_KEY')
+CITY = os.environ.get('CITY', 'Tokyo')
 
 
 width, height = unicornhathd.get_shape()

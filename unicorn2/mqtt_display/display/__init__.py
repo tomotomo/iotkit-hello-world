@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # coding: utf-8
 
 """
@@ -79,10 +80,10 @@ def change(mode):
 def start():
     '''
         スタート用の関数
-        呼び出されるととりあずワシントンを表示する
+        呼び出されるととりあず二子玉川がある世田谷区を表示する
     '''
     logger.debug('display initial function start.')
-    change('Washington')
+    change('Setagaya')
 
 def end():
     '''
