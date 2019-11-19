@@ -1,0 +1,11 @@
+{
+	"name": "IoTkit Hello World",
+	"version": "0.1",
+	"description": "",
+	"author": "",
+	"license": "Apache License 2",
+	"language": "",
+	"scripts": {
+		"start": "python3 -u unicorn2/main.py"
+	}
+}
